@@ -15,9 +15,10 @@ export const BlogProvider = (props) => {
       .getBlogsData()
       .then((res) => res.json())
       .then((data) => {
-        setBlog(data);
+        setBlog(data.data);
       });
   }, []);
+
   return (
     <BlogContext.Provider value={[blog, setBlog]}>
       {props.children}
